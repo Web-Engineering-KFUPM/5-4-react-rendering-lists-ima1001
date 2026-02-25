@@ -11,6 +11,7 @@ export default function CourseCard({ course, index, onMutateCourse }) {
 
   function toggleTask(id) {
     // TODO (TASK 4): toggle task.isDone for the task with matching id
+    course.onMutateCourse.map()
   }
 
   function deleteTask(id) {
@@ -30,7 +31,6 @@ export default function CourseCard({ course, index, onMutateCourse }) {
             - course has tasks AND
             - all tasks are done
             Use logical && */
-            
             allDone && <p className="muted">All caught up.</p>
             }
       </header>
