@@ -11,13 +11,21 @@ export default function CourseCard({ course, index, onMutateCourse }) {
 
   function toggleTask(id) {
     // TODO (TASK 4): toggle task.isDone for the task with matching id
-    onMutateCourse(id, (tasks) => tasks.map((t, i) => (i === id ? { ...t, isDone: !isDone } : t)));
+    //onMutateCourse(id, (tasks) => tasks.map((t, i) => (i === id ? { ...t, isDone: !isDone } : t)));
+    onMutateCourse(index, (tasks) =>
+    tasks.map((t) =>
+      t.id === id ? { ...t, isDone: !t.isDone } : t
+      )
+    );
   }
   
 
   function deleteTask(id) {
     // TODO (TASK 4): remove the task with matching id
-    onMutateCourse(id, (tasks) => tasks.filter((t, i) => (i === id? { ...t,  } : t)));
+   // onMutateCourse(id, (tasks) => tasks.filter((t, i) => (i === id? { ...t,  } : t)));
+    onMutateCourse(index, (tasks) =>
+      tasks.filter((t) => t.id !== id)
+    );
 
   }
 
